@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Token Management</title>
+    <link rel="stylesheet" href="css/zd05sd6muzauqwks.css">
+    <link rel="stylesheet" href="css/8w11dsm7q69dq8wa.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+        
+        .admin-panel {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .password-form {
+            text-align: center;
+        }
+        
+        .password-input {
+            width: 100%;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #415566 0%, #718290 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        
+        .stat-card p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .info h4 {
+            color: #202f3c;
+            margin-bottom: 15px;
+        }
+        
+        .info ul {
+            padding-left: 20px;
+        }
+        
+        .info li {
+            margin-bottom: 8px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .admin-panel {
+                margin: 10px auto;
+                padding: 20px;
+                max-width: 95%;
+                border-radius: 10px;
+            }
+            
+            .actions {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            
+            .btn-admin {
+                width: 100%;
+                margin: 0;
+                padding: 14px 20px;
+                font-size: 15px;
+                border-radius: 6px;
+            }
+            
+            .stat-card {
+                padding: 18px;
+                margin: 12px 0;
+                border-radius: 8px;
+            }
+            
+            .stat-card h3 {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            
+            .stat-card p {
+                font-size: 14px;
+            }
+            
+            .password-form h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            
+            .info {
+                padding: 15px;
+                margin-top: 15px;
+            }
+            
+            .info h4 {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            
+            .info li {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            
+            .admin-panel {
+                margin: 5px auto;
+                padding: 15px;
+                max-width: 98%;
+                border-radius: 8px;
+            }
+            
+            .password-input {
+                font-size: 14px;
+                padding: 12px;
+                border-radius: 6px;
+            }
+            
+            .btn-admin {
+                font-size: 14px;
+                padding: 12px 18px;
+                border-radius: 6px;
+            }
+            
+            .password-form h2 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .stat-card {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            .stat-card h3 {
+                font-size: 15px;
+            }
+            
+            .stat-card p {
+                font-size: 13px;
+            }
+            
+            .info {
+                padding: 12px;
+            }
+            
+            .info h4 {
+                font-size: 15px;
+            }
+            
+            .info li {
+                font-size: 12px;
+            }
+            
+            .alert {
+                padding: 12px;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .admin-panel {
+                padding: 12px;
+            }
+            
+            .password-input {
+                padding: 10px;
+                font-size: 13px;
+            }
+            
+            .btn-admin {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
+            
+            .password-form h2 {
+                font-size: 16px;
+            }
+            
+            .stat-card {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body class="body">
+  <div class="wrapper wrapper-navbar">
+    <div id="block_58">
+      <div class="block-wrapper">
+        <div class="component_navbar">
+          <div class="component-navbar__wrapper">
+            <div class="sidebar-block__top component-navbar component-navbar__navbar-public editor__component-wrapper">
+              <div>
+                <nav class="navbar navbar-expand-lg navbar-light container-lg">
+                  <div class="navbar-public__header">
+                    <div class="sidebar-block__top-brand">
+                      <div class="component-navbar-brand component-navbar-public-brand">
+                        <div class="component-navbar-brand component-navbar-public-brand">
+                           <a target="_self"><span style="text-transform: uppercase"><span style="font-size: 24px"><span style="letter-spacing: 1.0px"><span style="line-height: 48px"><strong style="font-weight: bold">ffslikes.site</strong></span></span></span></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-content">
+      <div class="wrapper-content__header">
+      </div>
+      <div class="wrapper-content__body">
+        <div id="block_77">
+          <div class="totals">
+            <div class="bg"></div>
+            <div class="divider-top"></div>
+            <div class="divider-bottom"></div>
+          </div>
+          <div class="wrapper-content">
+            <div class="wrapper-content__header">
+            </div>
+            <div class="wrapper-content__body">
+              <div id="block_76">
+                <div class="sign-in">
+                  <div class="bg"></div>
+                  <div class="divider-top"></div>
+                  <div class="divider-bottom"></div>
+                  <div class="container">
+                    <div class="row sign-up-center-alignment">
+                      <div class="col-lg-8">
+                        <div class="component_card">
+                          <div class="card">
+                            <div class="admin-panel">
+                              <div id="passwordSection" class="password-form">
+                                <center>
+                                  <h4>🔐 Admin Access</h4>
+                                  <p>Enter admin password to continue</p>
+                                </center>
+                                <div class="form-group">
+                                  <input type="password" id="adminPassword" class="form-control password-input" placeholder="Admin Password">
+                                </div>
+                                <div class="component_button_submit">
+                                  <div class="form-group">
+                                    <div>
+                                      <button class="btn btn-block btn-big-primary" onclick="authenticateAdmin()">🔓 Unlock Admin Panel</button>
+                                      <a href="/home" class="btn btn-block btn-big-primary">🏠 Home</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div id="adminContent" class="hidden">
+                                <center>
+                                  <h4>🔧 Token Management Admin Panel</h4>
+                                  <p>Manage and monitor access tokens in the database</p>
+                                </center>
+                                
+                                <div id="tokenStats">
+                                  <div class="stat-card">
+                                    <h3>Token Statistics</h3>
+                                    <p>Loading...</p>
+                                  </div>
+                                </div>
+                                
+                                <div class="component_button_submit">
+                                  <div class="form-group">
+                                    <div>
+                                      <button class="btn btn-block btn-big-primary" onclick="loadTokenStats()">🔄 Refresh Stats</button>
+                                      <button class="btn btn-block btn-big-primary" onclick="reactivateTokens()">✅ Reactivate All Tokens</button>
+                                      <button class="btn btn-block btn-big-primary" onclick="validateTokens()">🔍 Validate All Tokens</button>
+                                      <a href="/home" class="btn btn-block btn-big-primary">🏠 Home</a>
+                                    </div>
+                                  </div>
+                                </div>
+                                
+                                <div id="alertContainer"></div>
+                                
+                                <div class="info">
+                                  <h4>ℹ️ Information</h4>
+                                  <ul>
+                                    <li><strong>Active Tokens:</strong> Ready to use for reactions/follows</li>
+                                    <li><strong>Inactive Tokens:</strong> Suspended or locked accounts</li>
+                                    <li><strong>Reactivate All:</strong> Makes all tokens active again</li>
+                                    <li><strong>Validate Tokens:</strong> Checks each token and updates status accordingly</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script>
+        function showAlert(message, type = 'success') {
+            const alertContainer = document.getElementById('alertContainer');
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.textContent = message;
+            
+            alertContainer.innerHTML = '';
+            alertContainer.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+
+        async function authenticateAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            
+            if (!password) {
+                showAlert('Please enter password', 'error');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/admin/auth', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ password })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('passwordSection').classList.add('hidden');
+                    document.getElementById('adminContent').classList.remove('hidden');
+                    loadTokenStats();
+                } else {
+                    showAlert(data.error || 'Invalid password', 'error');
+                }
+            } catch (error) {
+                showAlert('Authentication error', 'error');
+            }
+        }
+
+        async function loadTokenStats() {
+            try {
+                const response = await fetch('/admin/token-stats');
+                const data = await response.json();
+                
+                if (data.error) {
+                    showAlert(data.error, 'error');
+                    return;
+                }
+                
+                document.getElementById('tokenStats').innerHTML = `
+                    <div class="stat-card">
+                        <h3>📊 Token Statistics</h3>
+                        <p><strong>Active Tokens:</strong> ${data.active}</p>
+                        <p><strong>Inactive Tokens:</strong> ${data.inactive}</p>
+                        <p><strong>Total Tokens:</strong> ${data.total}</p>
+                    </div>
+                `;
+            } catch (error) {
+                showAlert('Error loading token statistics', 'error');
+            }
+        }
+
+        async function reactivateTokens() {
+            if (!confirm('Are you sure you want to reactivate ALL tokens? This will make all tokens active again.')) {
+                return;
+            }
+            
+            try {
+                const response = await fetch('/admin/reactivate-tokens', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAlert(data.message, 'success');
+                    loadTokenStats();
+                } else {
+                    showAlert(data.error, 'error');
+                }
+            } catch (error) {
+                showAlert('Error reactivating tokens', 'error');
+            }
+        }
+
+        async function validateTokens() {
+            if (!confirm('This will validate all tokens and may take some time. Continue?')) {
+                return;
+            }
+            
+            showAlert('Validating tokens... Please wait.', 'success');
+            
+            try {
+                const response = await fetch('/admin/validate-tokens', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showAlert(data.message, 'success');
+                    loadTokenStats();
+                } else {
+                    showAlert(data.error, 'error');
+                }
+            } catch (error) {
+                showAlert('Error validating tokens', 'error');
+            }
+        }
+        document.getElementById('adminPassword').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                authenticateAdmin();
+            }
+        });
+    </script>
+</body>
+</html>
