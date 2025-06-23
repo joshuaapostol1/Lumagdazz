@@ -535,7 +535,7 @@ app.get('/admin', async (req, res) => {
 
 app.post('/admin/auth', async (req, res) => {
     const { password } = req.body;
-    if (password === 'joshua0948') {
+    if (password === 'lamagdazz') {
         req.session.adminAuth = true;
         res.json({ success: true });
     } else {
